@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OpenBoard</title>
+        <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <div class="options-cont">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="tool-box-cont scale-tools">
+            <img class="pencil" src="./icons/Pencil.svg">
+            <img class="eraser" src="./icons/Eraser.svg">
+            <img class="download" src="./icons/Download.svg">
+            <img class="upload" src="./icons/Upload.svg">
+            <img class="stickynote" src="./icons/StickyNote.svg">
+            <img class="redo" src="./icons/Redo.svg">
+            <img class="undo" src="./icons/Undo.svg">
+        </div>
+        <div class="pencil-cont">
+            <div class="range-cont">
+                <input type="range" min="2" max="10" value="3" class="pencilwidth">
+            </div>
+            
+            <div class="color-cont">
+                <div class="black pencil-col"></div>
+                <div class="red pencil-col"></div>
+                <div class="blue pencil-col"></div>
+            </div>
+        </div>
+
+        <div class="eraser-cont">
+            <input type="range" min="2" max="10" value="3" class="eraserwidth">
+        </div>
+
+        <!-- <div class="sticky-cont">
+            <div class="header-cont">
+                <div class="minimize"></div>
+                <div class="remove"></div>
+            </div>
+            <div class="notes-cont">
+                <textarea spellcheck="false"></textarea>
+            </div>
+        </div> -->
+        <canvas></canvas>
+
+        <!-- for socket , connecting to server -->
+        <script src="https://cdn.socket.io/4.7.5/socket.io.min.js" integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO" crossorigin="anonymous"></script>
+        <script>
+            let socket=io.connect("http://localhost:3000");
+        </script>
+
+
+
+        <script src="./script.js"></script>
+        <script src="./canvas.js"></script>
+    </body>
+</html>
